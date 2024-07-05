@@ -9,7 +9,7 @@ const TodoList = ({ todos, handleComplete }) => {
         <li key={todo.id}>
           {todo.text}
           {!todo.completed && (
-            <button onClick={() => handleComplete(todo.id)}>Complete</button>
+            <button onClick={() => handleComplete(todo.id)}>complete</button>
           )}
         </li>
       ))}
