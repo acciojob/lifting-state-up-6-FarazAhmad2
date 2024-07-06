@@ -1,19 +1,20 @@
 import React from 'react';
-const TodoList = ({ todos, handleComplete }) => {
 
+const TodoList = ({ todos, handleComplete }) => {
   return (
     <>
-    <h2>Child Component</h2>
-    <ul>
-      {todos.map(todo => (
-        <li key={todo.id}>
-          {todo.text}
-          {!todo.completed && (
-            <button onClick={() => handleComplete(todo.id)}>Complete</button>
-          )}
-        </li>
-      ))}
-    </ul>
+      <h2>Child Component</h2>
+      <ul>
+        {todos.map(todo => (
+          <li key={todo.id}>
+            {todo.text}
+            {!todo.completed && (
+              <button onClick={() => handleComplete(todo.id)}>Complete</button>
+            )}
+            {todo.completed && <span style={{marginLeft:'10px'}}>Completed</span>}
+          </li>
+        ))}
+      </ul>
     </>
   );
 };
