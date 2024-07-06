@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoList from './TodoList';
 
 const App = () => {
@@ -13,6 +13,11 @@ const App = () => {
       todo.id === id ? { ...todo, completed: true } : todo
     ));
   };
+
+  // useEffect to log todos state change
+  useEffect(() => {
+    console.log('Todos state changed:', todos);
+  }, [todos]);
 
   return (
     <div className="App">

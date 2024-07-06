@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const TodoList = ({ todos, handleComplete }) => {
+  useEffect(() => {
+    console.log('TodoList rendered with todos:', todos);
+  }, [todos]);
+
   return (
     <>
       <h2>Child Component</h2>
@@ -11,7 +15,6 @@ const TodoList = ({ todos, handleComplete }) => {
             {!todo.completed && (
               <button onClick={() => handleComplete(todo.id)}>Complete</button>
             )}
-            {todo.completed && <span style={{marginLeft:'10px'}}>Completed</span>}
           </li>
         ))}
       </ul>
